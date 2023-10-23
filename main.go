@@ -1,7 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"net/http"
+
+	"github.com/gin-gonic/gin"
+)
 
 func main() {
-	fmt.Println("Threads API")
+	r := gin.Default()
+	r.GET("/threads", func(context *gin.Context) {
+		context.JSON(http.StatusOK, gin.H{
+			"data": []interface{}{},
+		})
+	})
+	r.Run()
 }
