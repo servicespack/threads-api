@@ -14,7 +14,7 @@ func main() {
 	configs.InitializeDatabase()
 
 	r := gin.Default()
-	r.GET("/threads", controllers.ListThreadas)
+	r.GET("/threads", controllers.ListThreads)
 	r.POST("/threads", controllers.CreateThread)
 	r.GET("/threads/:id", controllers.GetThread)
 	r.PATCH("/threads/:id", controllers.UpdateThread)

@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-func ListThreadas(context *gin.Context) {
+func ListThreads(context *gin.Context) {
 	context.JSON(http.StatusOK, gin.H{
 		"data": []interface{}{},
 	})
