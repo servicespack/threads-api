@@ -15,5 +15,30 @@ func main() {
 			"data": []interface{}{},
 		})
 	})
+
+	r.POST("/threads", func(context *gin.Context) {
+		context.JSON(http.StatusOK, gin.H{
+			"created": true,
+		})
+	})
+
+	r.GET("/threads/:id", func(context *gin.Context) {
+		context.JSON(http.StatusOK, gin.H{
+			"get": true,
+		})
+	})
+
+	r.PATCH("/threads/:id", func(context *gin.Context) {
+		context.JSON(http.StatusOK, gin.H{
+			"updated": true,
+		})
+	})
+
+	r.DELETE("/threads/:id", func(context *gin.Context) {
+		context.JSON(http.StatusOK, gin.H{
+			"updated": true,
+		})
+	})
+
 	r.Run()
 }
