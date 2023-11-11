@@ -6,6 +6,5 @@ import (
 
 type Thread struct {
 	gorm.Model
-	id   string
-	text string
+	Text string
 }
