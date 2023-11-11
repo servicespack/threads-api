@@ -6,11 +6,18 @@ import (
 	"gorm.io/gorm"
 )
 
+var db *gorm.DB
+
 func InitializeDatabase() {
 	database, err := gorm.Open(sqlite.Open("threads.db"), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect database")
 	}
 
-	database.AutoMigrate(&models.Thread{})
+	db = database
+	db.AutoMigrate(&models.Thread{})
+}
+
+func GetDB() *gorm.DB {
+	return db
 }
